@@ -1,3 +1,5 @@
+package andere_files;
+
 public class GenClass <T>{
     private T objekt;
     private T objekt2;

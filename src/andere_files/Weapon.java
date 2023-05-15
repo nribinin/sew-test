@@ -1,3 +1,5 @@
+package andere_files;
+
 import java.util.Objects;
 
 public class Weapon {
