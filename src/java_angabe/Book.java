@@ -3,11 +3,14 @@ package java_angabe;
 import java.util.Objects;
 
 public class Book extends Media implements Identifiable, Comparable<Identifiable>{
+
     private String author;
+
     public Book(String idNo, int year, String title, String author){
         super(IDType.ISBN, idNo, year, title);
         this.author = author;
     }
+
     public String getAuthor(){
         return this.author;
     }
@@ -32,7 +35,8 @@ public class Book extends Media implements Identifiable, Comparable<Identifiable
 
     @Override
     public int hashCode() {
-        return 31 + super.getIDNumber().hashCode();
+            return 31 +
+            getID().hashCode();
     }
     @Override
     public int compareTo(Identifiable o){

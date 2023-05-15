@@ -26,16 +26,18 @@ public class Testkatalog {
 
     @DisplayName("Name zum einfügen")
     @Test
-    void test1(){
+    void addAndCheck(){
         c1.add(b1);
         c1.add(b11);
+        Media ausgabe = c1.getByID("ISBN 111-111");
         assertEquals(1, c1.count(),"Fehler beim Hinzufügen");
+        assertEquals(new Book("111-111", 1999, "One Piece", "Echiro Oda"), ausgabe, "Fehler bei der Ausgabe");
     }
 
 
     @DisplayName("Prüft ob Get IDs ")
     @Test
-    void test2(){
+    void checkID(){
         c1.add(b1);
         c1.add(b2);
         c1.add(b3);
@@ -47,7 +49,7 @@ public class Testkatalog {
 
     @DisplayName("Prüft ob eine Exception geworfen wird")
     @Test
-    void test3(){
-        assertThrows(IllegalArgumentException.class, () -> c1.getByID("111-111"), "Exception funktioniert");
+    void checkException(){
+        assertThrows(IllegalArgumentException.class, () -> c1.getByID("ISBN 111-111"), "Exception funktioniert nicht");
     }
 }

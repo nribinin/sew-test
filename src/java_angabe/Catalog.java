@@ -13,7 +13,7 @@ public class Catalog {
         if(m == null){
             throw new IllegalArgumentException("Invalid");
         }
-        media.put(m.getID(), m);
+            media.put(m.getID(), m);
     }
 
     public Media getByID(String id){
