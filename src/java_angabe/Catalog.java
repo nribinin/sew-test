@@ -25,14 +25,9 @@ public class Catalog {
 
 
     public String[] getIDs() {
-
-        String[] arr = new String[media.size()];
-        int i = 0;
-        for(Map.Entry<String, Media> entry : this.media.entrySet()){
-            arr[i] = entry.getKey();
-            i++;
-        }
-        return arr;
+        Set<String> set = this.media.keySet();
+        String [] keys = set.toArray(new String[set.size()]);
+        return keys;
     }
 
     public int count(){
