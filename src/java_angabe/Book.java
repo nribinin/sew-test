@@ -17,7 +17,7 @@ public class Book extends Media implements Identifiable, Comparable<Identifiable
 
     @Override
     public String getID(){
-        return super.getIDType().name() + " " + getIDNumber();
+        return getIDType().name() + " " + getIDNumber();
     }
 
     @Override
@@ -35,9 +35,16 @@ public class Book extends Media implements Identifiable, Comparable<Identifiable
 
     @Override
     public int hashCode() {
-            return 31 +
-            getID().hashCode();
+            return 31 + getID().hashCode();
     }
+    //@Override
+    //public int hashCode() {
+    //    final int prime = 31;
+    //    int result = 1; result = prime * result + ((autor == null) ? 0 : autor.hashCode());
+    //    result = prime * result + erscheinungsJahr;
+    //    result = prime * result + ((titel == null) ? 0 : titel.hashCode());
+    //    return result;
+    //}
     @Override
     public int compareTo(Identifiable o){
        if(o == null) {
